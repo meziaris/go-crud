@@ -1,0 +1,43 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: go-crud-dpl
+spec:
+  revisionHistoryLimit: 3
+  strategy:
+    rollingUpdate:
+      maxSurge: 50%
+      maxUnavailable: 0%
+    type: RollingUpdate
+  selector:
+    matchLabels:
+      service_name: go-crud-dpl
+  template:
+    metadata:
+      labels:
+        service_name: go-crud-dpl
+    spec:
+      restartPolicy: Always
+      containers:
+        - name: go-crud-dpl
+          image: meziaris/go-crud:latest
+          imagePullPolicy: Always
+          ports:
+            - name: app-port
+              containerPort: 8080
+          resources:
+            requests:
+              cpu: "0.1"
+              memory: "100Mi"
+          securityContext:
+            runAsUser: 1000
+          envFrom:
+          - secretRef:
+              name: go-crud-secret-env
+          volumeMounts:
+          - name: tz-jakarta
+            mountPath: /etc/localtime
+      volumes:
+        - name: tz-jakarta
+          hostPath:
+            path: /usr/share/zoneinfo/Asia/Jakarta

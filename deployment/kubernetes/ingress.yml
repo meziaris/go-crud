@@ -1,0 +1,18 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: go-crud-ing
+  annotations:
+    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+spec:
+  rules:
+  - host: api.go.mezi.dev
+    http:
+     paths:
+     - path: /
+       backend:
+         service:
+           name: go-crud-svc
+           port:
+             number: 8080
+       pathType: ImplementationSpecific

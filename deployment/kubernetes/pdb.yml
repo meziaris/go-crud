@@ -1,0 +1,9 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: go-crud-pdb
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      service_name: go-crud-dpl

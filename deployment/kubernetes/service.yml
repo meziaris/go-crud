@@ -1,0 +1,9 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: go-crud-svc
+spec:
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8888
