@@ -1,9 +1,12 @@
+apiVersion: apps/v1
 kind: Service
 apiVersion: v1
 metadata:
-  name: go-crud-svc
+  name: go-crud
 spec:
+  selector:
+    app: go-crud
   ports:
     - protocol: TCP
       port: 80
-      targetPort: 8888
+      targetPort: 8080

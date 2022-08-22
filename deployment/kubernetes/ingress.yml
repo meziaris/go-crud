@@ -1,22 +1,23 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: go-crud-ing
+  name: go-crud
   annotations:
-    cert-manager.io/cluster-issuer: letsencrypt-nginx
+    cert-manager.io/issuer: letsencrypt
 spec:
+  ingressClassName: nginx
   tls:
   - hosts:
-      - api.go.mezi.dev
-    secretName: letsencrypt-go-crud
+      - go.api.mezi.dev
+    secretName: go-crud-tls
   rules:
-  - host: api.go.mezi.dev
+  - host: go.api.mezi.dev
     http:
-     paths:
-     - path: /
-       backend:
-         service:
-           name: go-crud-svc
-           port:
-             number: 8080
-       pathType: ImplementationSpecific
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: go-crud
+            port:
+              number: 80
