@@ -65,7 +65,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "token",
+							"value": "{{TOKEN}}",
 							"type": "string"
 						}
 					]
@@ -92,7 +92,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "token",
+							"value": "{{TOKEN}}",
 							"type": "string"
 						}
 					]
@@ -119,7 +119,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "token",
+							"value": "{{TOKEN}}",
 							"type": "string"
 						}
 					]
@@ -147,7 +147,7 @@
 					"bearer": [
 						{
 							"key": "token",
-							"value": "token",
+							"value": "{{TOKEN}}",
 							"type": "string"
 						}
 					]
@@ -199,13 +199,13 @@
 	],
 	"variable": [
 		{
-			"key": "URL",
-			"value": "localhost:8080",
+			"key": "TOKEN",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiNjMwMzkyN2RiODBhYjY0ZDUxYWNhZTY0In0.I7j5E6JH89kf64cLV_Q0DkB1d17Uq8VZT4DG6YiVC7E",
 			"type": "default"
 		},
 		{
-			"key": "TOKEN",
-			"value": "token",
+			"key": "URL",
+			"value": "https://go.api.mezi.dev",
 			"type": "default"
 		}
 	]
