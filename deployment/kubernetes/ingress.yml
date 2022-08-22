@@ -3,8 +3,12 @@ kind: Ingress
 metadata:
   name: go-crud-ing
   annotations:
-    nginx.ingress.kubernetes.io/backend-protocol: "HTTP"
+    cert-manager.io/cluster-issuer: letsencrypt-nginx
 spec:
+  tls:
+  - hosts:
+      - api.go.mezi.dev
+    secretName: letsencrypt-go-crud
   rules:
   - host: api.go.mezi.dev
     http:
