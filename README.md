@@ -18,3 +18,7 @@ go run ./goapps
 username: admin
 password: admin
 ```
+
+## Api Documentation
+
+Api Documentation : [Postman Collection](https://github.com/meziaris/go-crud/blob/main/api/postman_collection.json)
