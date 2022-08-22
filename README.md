@@ -21,4 +21,4 @@ password: admin
 
 ## Api Documentation
 
-Api Documentation : [Postman Collection](https://github.com/meziaris/go-crud/blob/main/api/postman_collection.json)
+Api Documentation : [Postman Collection](https://raw.githubusercontent.com/meziaris/go-crud/main/api/postman_collection.json)
